@@ -9185,7 +9185,7 @@ const CheckBox = ({ isChecked, ...rest }) => {
     S$b.CheckBox,
     {
       isChecked,
-      src: "/checked-box.svg",
+      src: "./checked-box.svg",
       alt: "checkedBox",
       "data-testid": "checkBox",
       ...rest
@@ -9194,7 +9194,7 @@ const CheckBox = ({ isChecked, ...rest }) => {
     S$b.CheckBox,
     {
       isChecked,
-      src: "/unchecked-box.svg",
+      src: "./unchecked-box.svg",
       alt: "unCheckedBox",
       "data-testid": "checkBox",
       ...rest
@@ -9283,9 +9283,9 @@ const ItemCard = ({ id: id2, product, quantity }) => {
           /* @__PURE__ */ jsxRuntimeExports.jsx(S$7.ItemPrice, { children: `${product.price.toLocaleString()}원` })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(S$7.Stepper, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => handleClickDecrease(id2), children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/minus-button.svg", alt: "minus-button" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => handleClickDecrease(id2), children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./minus-button.svg", alt: "minus-button" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: quantity }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => increaseCartItemQuantity(id2), children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/plus-button.svg", alt: "plus-button" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => increaseCartItemQuantity(id2), children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./plus-button.svg", alt: "plus-button" }) })
         ] })
       ] })
     ] })
@@ -9441,11 +9441,12 @@ const CartPage = () => {
           item.id
         )) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(S$4.infoContainer, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/info.svg" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./info.svg" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
             "총 주문 금액이 ",
             DELIVERY_PRICE_THRESHOLD.toLocaleString(),
-            " 이상인 경우 무료 배송됩니다."
+            " ",
+            "이상인 경우 무료 배송됩니다."
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(PriceSection, {})
@@ -9550,7 +9551,7 @@ const S$3 = {
 };
 const Header = () => {
   const { page, setPage } = usePageContext();
-  const headerContent = page === "cart" ? /* @__PURE__ */ jsxRuntimeExports.jsx(S$2.title, { children: "SHOP" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "/go-back.svg", alt: "goBack", onClick: () => setPage("cart") }) });
+  const headerContent = page === "cart" ? /* @__PURE__ */ jsxRuntimeExports.jsx(S$2.title, { children: "SHOP" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./go-back.svg", alt: "goBack", onClick: () => setPage("cart") }) });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(S$2.container, { children: headerContent });
 };
 const S$2 = {
