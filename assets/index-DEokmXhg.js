@@ -9594,7 +9594,7 @@ const S = {
 const start = async () => {
   const { worker } = await __vitePreload(() => import("./browser-BZS1Osao.js"), true ? [] : void 0);
   await worker.start({
-    serviceWorker: { url: "/mockServiceWorker.js" },
+    serviceWorker: { url: "/react-shopping-cart/mockServiceWorker.js" },
     onUnhandledRequest: "bypass"
   });
 };
