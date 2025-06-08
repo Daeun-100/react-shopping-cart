@@ -238,7 +238,7 @@ function R$1(a, b, e, d, c) {
     throw b = String(a), Error("Objects are not valid as a React child (found: " + ("[object Object]" === b ? "object with keys {" + Object.keys(a).join(", ") + "}" : b) + "). If you meant to render a collection of children, use an array instead.");
   return h;
 }
-function S$l(a, b, e) {
+function S$m(a, b, e) {
   if (null == a)
     return a;
   var d = [], c = 0;
@@ -268,18 +268,18 @@ var U$1 = { current: null }, V$1 = { transition: null }, W$1 = { ReactCurrentDis
 function X$1() {
   throw Error("act(...) is not supported in production builds of React.");
 }
-react_production_min.Children = { map: S$l, forEach: function(a, b, e) {
-  S$l(a, function() {
+react_production_min.Children = { map: S$m, forEach: function(a, b, e) {
+  S$m(a, function() {
     b.apply(this, arguments);
   }, e);
 }, count: function(a) {
   var b = 0;
-  S$l(a, function() {
+  S$m(a, function() {
     b++;
   });
   return b;
 }, toArray: function(a) {
-  return S$l(a, function(a2) {
+  return S$m(a, function(a2) {
     return a2;
   }) || [];
 }, only: function(a) {
@@ -4951,7 +4951,7 @@ function Dj(a, b) {
         null === d ? b || null === a.tail ? a.tail = null : a.tail.sibling = null : d.sibling = null;
     }
 }
-function S$k(a) {
+function S$l(a) {
   var b = null !== a.alternate && a.alternate.child === a.child, c = 0, d = 0;
   if (b)
     for (var e = a.child; null !== e; )
@@ -4977,9 +4977,9 @@ function Ej(a, b, c) {
     case 12:
     case 9:
     case 14:
-      return S$k(b), null;
+      return S$l(b), null;
     case 1:
-      return Zf(b.type) && $f(), S$k(b), null;
+      return Zf(b.type) && $f(), S$l(b), null;
     case 3:
       d = b.stateNode;
       zh();
@@ -4990,7 +4990,7 @@ function Ej(a, b, c) {
       if (null === a || null === a.child)
         Gg(b) ? b.flags |= 4 : null === a || a.memoizedState.isDehydrated && 0 === (b.flags & 256) || (b.flags |= 1024, null !== zg && (Fj(zg), zg = null));
       Aj(a, b);
-      S$k(b);
+      S$l(b);
       return null;
     case 5:
       Bh(b);
@@ -5002,7 +5002,7 @@ function Ej(a, b, c) {
         if (!d) {
           if (null === b.stateNode)
             throw Error(p(166));
-          S$k(b);
+          S$l(b);
           return null;
         }
         a = xh(uh.current);
@@ -5200,7 +5200,7 @@ function Ej(a, b, c) {
         }
         null !== b.ref && (b.flags |= 512, b.flags |= 2097152);
       }
-      S$k(b);
+      S$l(b);
       return null;
     case 6:
       if (a && null != b.stateNode)
@@ -5228,7 +5228,7 @@ function Ej(a, b, c) {
         } else
           d = (9 === c.nodeType ? c : c.ownerDocument).createTextNode(d), d[Of] = b, b.stateNode = d;
       }
-      S$k(b);
+      S$l(b);
       return null;
     case 13:
       E(L);
@@ -5247,7 +5247,7 @@ function Ej(a, b, c) {
             f2[Of] = b;
           } else
             Ig(), 0 === (b.flags & 128) && (b.memoizedState = null), b.flags |= 4;
-          S$k(b);
+          S$l(b);
           f2 = false;
         } else
           null !== zg && (Fj(zg), zg = null), f2 = true;
@@ -5259,19 +5259,19 @@ function Ej(a, b, c) {
       d = null !== d;
       d !== (null !== a && null !== a.memoizedState) && d && (b.child.flags |= 8192, 0 !== (b.mode & 1) && (null === a || 0 !== (L.current & 1) ? 0 === T && (T = 3) : tj()));
       null !== b.updateQueue && (b.flags |= 4);
-      S$k(b);
+      S$l(b);
       return null;
     case 4:
-      return zh(), Aj(a, b), null === a && sf(b.stateNode.containerInfo), S$k(b), null;
+      return zh(), Aj(a, b), null === a && sf(b.stateNode.containerInfo), S$l(b), null;
     case 10:
-      return ah(b.type._context), S$k(b), null;
+      return ah(b.type._context), S$l(b), null;
     case 17:
-      return Zf(b.type) && $f(), S$k(b), null;
+      return Zf(b.type) && $f(), S$l(b), null;
     case 19:
       E(L);
       f2 = b.memoizedState;
       if (null === f2)
-        return S$k(b), null;
+        return S$l(b), null;
       d = 0 !== (b.flags & 128);
       g = f2.rendering;
       if (null === g)
@@ -5301,18 +5301,18 @@ function Ej(a, b, c) {
         if (!d)
           if (a = Ch(g), null !== a) {
             if (b.flags |= 128, d = true, c = a.updateQueue, null !== c && (b.updateQueue = c, b.flags |= 4), Dj(f2, true), null === f2.tail && "hidden" === f2.tailMode && !g.alternate && !I)
-              return S$k(b), null;
+              return S$l(b), null;
           } else
             2 * B() - f2.renderingStartTime > Gj && 1073741824 !== c && (b.flags |= 128, d = true, Dj(f2, false), b.lanes = 4194304);
         f2.isBackwards ? (g.sibling = b.child, b.child = g) : (c = f2.last, null !== c ? c.sibling = g : b.child = g, f2.last = g);
       }
       if (null !== f2.tail)
         return b = f2.tail, f2.rendering = b, f2.tail = b.sibling, f2.renderingStartTime = B(), b.sibling = null, c = L.current, G(L, d ? c & 1 | 2 : c & 1), b;
-      S$k(b);
+      S$l(b);
       return null;
     case 22:
     case 23:
-      return Hj(), d = null !== b.memoizedState, null !== a && null !== a.memoizedState !== d && (b.flags |= 8192), d && 0 !== (b.mode & 1) ? 0 !== (fj & 1073741824) && (S$k(b), b.subtreeFlags & 6 && (b.flags |= 8192)) : S$k(b), null;
+      return Hj(), d = null !== b.memoizedState, null !== a && null !== a.memoizedState !== d && (b.flags |= 8192), d && 0 !== (b.mode & 1) ? 0 !== (fj & 1073741824) && (S$l(b), b.subtreeFlags & 6 && (b.flags |= 8192)) : S$l(b), null;
     case 24:
       return null;
     case 25:
@@ -9089,8 +9089,8 @@ const PageProvider = ({ children }) => {
   );
 };
 const CheckBox = ({ isChecked, ...rest }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$j.ButtonContainer, { ...rest, disabled: rest.disabled, children: isChecked ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-    S$j.CheckBox,
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$k.ButtonContainer, { ...rest, disabled: rest.disabled, children: isChecked ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+    S$k.CheckBox,
     {
       isChecked,
       src: "./checked-box.svg",
@@ -9098,7 +9098,7 @@ const CheckBox = ({ isChecked, ...rest }) => {
       "data-testid": "checkBox"
     }
   ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-    S$j.CheckBox,
+    S$k.CheckBox,
     {
       isChecked,
       src: "./unchecked-box.svg",
@@ -9107,7 +9107,7 @@ const CheckBox = ({ isChecked, ...rest }) => {
     }
   ) });
 };
-const S$j = {
+const S$k = {
   ButtonContainer: newStyled.button`
     cursor: ${({ disabled }) => disabled ? "default" : "pointer"};
   `,
@@ -9258,12 +9258,12 @@ const useCheckedCartActions = () => {
 const AllCheckSection = () => {
   const { isAllChecked } = useCheckCartIdsContext();
   const { toggleAllChecked } = useCheckedCartActions();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$i.Container, { "data-testid": "allCheckSection", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$j.Container, { "data-testid": "allCheckSection", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CheckBox, { isChecked: isAllChecked, onClick: toggleAllChecked }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "전체 선택" })
   ] });
 };
-const S$i = {
+const S$j = {
   Container: newStyled.section`
     display: flex;
     align-items: center;
@@ -9273,18 +9273,18 @@ const S$i = {
 };
 const CartItemCountMessage = () => {
   const { cartItems } = useCartItemsContext();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$h.message, { children: `현재 ${cartItems.length}종류의 상품이 담겨있습니다.` });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$i.message, { children: `현재 ${cartItems.length}종류의 상품이 담겨있습니다.` });
 };
-const S$h = {
+const S$i = {
   message: newStyled.p`
     font-size: 12px;
     margin: 0 0 36px;
   `
 };
 const BottomButton = ({ title, ...rest }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$g.Button, { ...rest, children: title });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$h.Button, { ...rest, children: title });
 };
-const S$g = {
+const S$h = {
   Button: newStyled.button`
     width: 100%;
     height: 64px;
@@ -9300,7 +9300,7 @@ const ConfirmButton = ({ title, ...rest }) => {
   const isDisabled = checkedCartIds.length === 0;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BottomButton, { disabled: isDisabled, title, ...rest });
 };
-const S$f = {
+const S$g = {
   Container: newStyled.div`
     border-top: 1px solid #e0e0e0;
     height: 160px;
@@ -9377,19 +9377,19 @@ const ItemCard = ({ id: id2, product, quantity }) => {
     }
     addCheckedCartItem(id2);
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$f.Container, { "data-testid": "item-card", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$f.ButtonBox, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$g.Container, { "data-testid": "item-card", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$g.ButtonBox, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CheckBox, { isChecked, onClick: handleCheckBoxClick }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(S$f.deleteButton, { onClick: () => handleClickDelete(id2), children: "삭제" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(S$g.deleteButton, { onClick: () => handleClickDelete(id2), children: "삭제" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$f.ItemBox, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(S$f.ItemImage, { src: product.imageUrl, alt: "product-image" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(S$f.ItemInfoBox, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$g.ItemBox, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(S$g.ItemImage, { src: product.imageUrl, alt: "product-image" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(S$g.ItemInfoBox, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(S$f.ItemName, { children: product.name }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(S$f.ItemPrice, { children: `${product.price.toLocaleString()}원` })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(S$g.ItemName, { children: product.name }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(S$g.ItemPrice, { children: `${product.price.toLocaleString()}원` })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(S$f.Stepper, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(S$g.Stepper, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => handleClickDecrease(id2), children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./minus-button.svg", alt: "minus-button" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: quantity }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => increaseCartItemQuantity(id2), children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./plus-button.svg", alt: "plus-button" }) })
@@ -9411,12 +9411,12 @@ const getOrderPrice = (cartItems, checkedCartIds) => {
   return orderPrice;
 };
 const PriceRow = ({ title, price }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$e.Container, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(S$e.title, { children: title }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(S$e.price, { "data-testid": title, children: `${price.toLocaleString()}원` })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$f.Container, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(S$f.title, { children: title }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(S$f.price, { "data-testid": title, children: `${price.toLocaleString()}원` })
   ] });
 };
-const S$e = {
+const S$f = {
   Container: newStyled.section`
     display: flex;
     align-items: center;
@@ -9453,14 +9453,23 @@ const useCouponsContext = () => {
   }
   return context;
 };
+const ShippingContext = reactExports.createContext(null);
+const useShippingContext = () => {
+  const context = reactExports.useContext(ShippingContext);
+  if (!context)
+    throw new Error("ShippingProvider로 감싸야 합니다.");
+  return context;
+};
 const PriceSection = () => {
   const { cartItems } = useCartItemsContext();
   const { checkedCartIds } = useCheckCartIdsContext();
   const { couponDiscount } = useCouponsContext();
+  console.log(couponDiscount);
+  const { isRemoteArea } = useShippingContext();
   const orderPrice = getOrderPrice(cartItems, checkedCartIds);
-  const deliveryPrice = calculateDeliveryPrice(orderPrice);
+  const deliveryPrice = calculateDeliveryPrice(orderPrice, isRemoteArea);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$d.calculationContainer, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$e.calculationContainer, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         PriceRow,
         {
@@ -9490,13 +9499,13 @@ const PriceSection = () => {
       PriceRow,
       {
         title: "총 결제 금액",
-        price: orderPrice + deliveryPrice,
+        price: orderPrice + deliveryPrice - couponDiscount,
         "data-testid": "totalPrice"
       }
     )
   ] });
 };
-const S$d = {
+const S$e = {
   calculationContainer: newStyled.div`
     display: flex;
     flex-direction: column;
@@ -9506,7 +9515,7 @@ const S$d = {
     margin-bottom: 12px;
   `
 };
-const S$c = {
+const S$d = {
   title: newStyled.p`
     font-size: 24px;
     font-weight: 700;
@@ -9530,12 +9539,12 @@ const S$c = {
   `
 };
 const InlineNotice = ({ text }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$b.container, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$c.container, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./info.svg" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: text })
   ] });
 };
-const S$b = {
+const S$c = {
   container: newStyled.div`
     width: 100%;
     display: flex;
@@ -9553,12 +9562,12 @@ const CartPage = () => {
     initCoupon();
   }, [initCoupon]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$c.content, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(S$c.title, { children: "장바구니" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$d.content, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(S$d.title, { children: "장바구니" }),
       cartItems.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(NoCartItems, {}) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(CartItemCountMessage, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(AllCheckSection, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(S$c.itemCardList, { children: cartItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(S$d.itemCardList, { children: cartItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           ItemCard,
           {
             id: item.id,
@@ -9594,9 +9603,9 @@ const OrderPriceConfirmPage = () => {
   const totalPrice = orderPrice + deliveryPrice;
   const totalQuantity = cartItems.filter(({ id: id2 }) => checkedCartIds.includes(id2)).reduce((acc, item) => acc + item.quantity, 0);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$a.content, { "data-testid": "orderPriceConfirmPage", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(S$a.title, { children: "결제 확인" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(S$a.middleContainer, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$b.content, { "data-testid": "orderPriceConfirmPage", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(S$b.title, { children: "결제 확인" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(S$b.middleContainer, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
           "총 ",
           checkedCartIds.length,
@@ -9606,9 +9615,9 @@ const OrderPriceConfirmPage = () => {
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "최종 결제 금액을 확인해 주세요." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(S$a.bottomContainer, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(S$a.totalPriceText, { children: "총 결제 금액" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(S$a.totalPrice, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(S$b.bottomContainer, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(S$b.totalPriceText, { children: "총 결제 금액" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(S$b.totalPrice, { children: [
           totalPrice.toLocaleString(),
           "원"
         ] })
@@ -9617,7 +9626,7 @@ const OrderPriceConfirmPage = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(BottomButton, { disabled: true, title: "결제하기" })
   ] });
 };
-const S$a = {
+const S$b = {
   content: newStyled.div`
     padding: 24px;
     display: flex;
@@ -9654,10 +9663,10 @@ const S$a = {
 };
 const Header = () => {
   const { page, setPage } = usePageContext();
-  const headerContent = page === "cart" ? /* @__PURE__ */ jsxRuntimeExports.jsx(S$9.title, { children: "SHOP" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./go-back.svg", alt: "goBack", onClick: () => setPage("cart") }) });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$9.container, { children: headerContent });
+  const headerContent = page === "cart" ? /* @__PURE__ */ jsxRuntimeExports.jsx(S$a.title, { children: "SHOP" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "./go-back.svg", alt: "goBack", onClick: () => setPage("cart") }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$a.container, { children: headerContent });
 };
-const S$9 = {
+const S$a = {
   container: newStyled.header`
     display: flex;
     align-items: center;
@@ -9678,13 +9687,13 @@ const CartItemConfirmMessage = () => {
     (total, item) => total + item.quantity,
     0
   );
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$8.message, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$9.message, { children: [
     `총 ${cartItems.length}종류의 상품 ${totalCount}개를 주문합니다`,
     /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
     "최종 결제 금액을 확인해 주세요."
   ] });
 };
-const S$8 = {
+const S$9 = {
   message: newStyled.p`
     font-size: 12px;
     margin: 0 0 36px;
@@ -9692,27 +9701,27 @@ const S$8 = {
   `
 };
 const ConfirmItemCard = ({ product, quantity }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$7.Container, { "data-testid": "item-card", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(S$7.ItemBox, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(S$7.ItemImage, { src: product.imageUrl, alt: "product-image" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$7.ItemInfoBox, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$8.Container, { "data-testid": "item-card", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(S$8.ItemBox, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(S$8.ItemImage, { src: product.imageUrl, alt: "product-image" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$8.ItemInfoBox, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(S$7.ItemName, { children: product.name }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(S$7.ItemPrice, { children: `${product.price.toLocaleString()}원` })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(S$8.ItemName, { children: product.name }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(S$8.ItemPrice, { children: `${product.price.toLocaleString()}원` })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: `${quantity} 개` })
     ] })
   ] }) });
 };
-const S$7 = {
-  ...S$f,
-  Container: newStyled(S$f.Container)`
+const S$8 = {
+  ...S$g,
+  Container: newStyled(S$g.Container)`
     height: 120px;
   `
 };
 const OpenCouponModalButton = ({ onClick }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$6.Button, { onClick, children: "쿠폰 적용" });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(S$7.Button, { onClick, children: "쿠폰 적용" });
 };
-const S$6 = {
+const S$7 = {
   Button: newStyled.button`
     min-height: 40px;
     color: #000000;
@@ -9972,10 +9981,10 @@ const CouponCard = ({
     event.stopPropagation();
     onClick();
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$5.container, { onClick: handleClick, isValid, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$5.couponNameContainer, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$6.container, { onClick: handleClick, isValid, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$6.couponNameContainer, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CheckBox, { isChecked: isSelected, disabled: !isValid }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(S$5.couponName, { children: CouponNameMap[coupon.code] })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(S$6.couponName, { children: CouponNameMap[coupon.code] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ExpirationDate, { expirationDate: coupon.expirationDate }),
@@ -9984,7 +9993,7 @@ const CouponCard = ({
     ] })
   ] });
 };
-const S$5 = {
+const S$6 = {
   container: newStyled.div`
     color: ${(props) => props.isValid ? "#000000" : "#b1b1b1"};
     width: 100%;
@@ -10031,7 +10040,7 @@ const CouponModal = ({ isOpen, onClose }) => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Modal.CloseButton, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Modal.Contents, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(S$4.contentsContainer, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Modal.Contents, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(S$5.contentsContainer, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(InlineNotice, { text: "쿠폰은 최대 2개까지 사용할 수 있습니다" }),
       coupons.map((coupon) => {
         const isSelected = selectedCoupons.some(
@@ -10065,11 +10074,41 @@ const CouponModal = ({ isOpen, onClose }) => {
     )
   ] });
 };
-const S$4 = {
+const S$5 = {
   contentsContainer: newStyled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+  `
+};
+const DeliveryInfo = () => {
+  const { isRemoteArea, setIsRemoteArea } = useShippingContext();
+  const toggleRemoteArea = () => {
+    setIsRemoteArea((prev2) => !prev2);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(S$4.Container, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(S$4.title, { children: "배송 정보" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(S$4.checkboxContainer, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CheckBox, { isChecked: isRemoteArea, onClick: toggleRemoteArea }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "제주도 및 도서 산간 지역" })
+    ] })
+  ] });
+};
+const S$4 = {
+  Container: newStyled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  `,
+  title: newStyled.p`
+    font-size: 16px;
+    font-weight: 700;
+  `,
+  checkboxContainer: newStyled.div`
+    display: flex;
+    align-items: center;
+    gap: 8px;
   `
 };
 const OrderConfirmPage = () => {
@@ -10095,6 +10134,7 @@ const OrderConfirmPage = () => {
         },
         item.id
       )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DeliveryInfo, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(OpenCouponModalButton, { onClick: handleOpenModal }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         InlineNotice,
@@ -10116,8 +10156,8 @@ const OrderConfirmPage = () => {
   ] });
 };
 const S$3 = {
-  ...S$c,
-  content: newStyled(S$c.content)`
+  ...S$d,
+  content: newStyled(S$d.content)`
     gap: 12px;
   `
 };
@@ -10180,13 +10220,6 @@ const CheckCartIdsProvider = ({ children }) => {
       children
     }
   );
-};
-const ShippingContext = reactExports.createContext(null);
-const useShippingContext = () => {
-  const context = reactExports.useContext(ShippingContext);
-  if (!context)
-    throw new Error("ShippingProvider로 감싸야 합니다.");
-  return context;
 };
 const ShippingProvider = ({ children }) => {
   const [isRemoteArea, setIsRemoteArea] = reactExports.useState(false);
